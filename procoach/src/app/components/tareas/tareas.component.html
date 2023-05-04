@@ -1,0 +1,15 @@
+<app-dashboard></app-dashboard>
+<div class="wrapper">
+    <div class="card" *ngFor="let tarea of tareas">
+        <img class="card-img-top" src="{{tarea.imagen}}" alt="Card image cap">
+        <div class="card-body">
+        <h3 class="card-title">{{tarea.nombre}}</h3>
+        <p class="card-text"><strong>Categoría: </strong>{{tarea.categoria}}</p>
+        <p class="card-text"><strong>Duración(min): </strong>{{tarea.duracion}}</p>
+        <p class="card-text"><strong>Descripción: </strong>{{tarea.descripcion}}</p>
+        <button class="btn btn-primary" id="descargarImagen" (click)="descargarImagen(tarea)">Descargar Imagen</button>
+        <button class="btn btn-primary" id="descargarPDF" (click)="descargarPDF(tarea)" >Descargar PDF</button>
+        <button class="btn btn-danger" id="borrarTarea" (click)="onClickDelete(tarea)" >Borrar</button>
+        </div>
+    </div>
+</div>

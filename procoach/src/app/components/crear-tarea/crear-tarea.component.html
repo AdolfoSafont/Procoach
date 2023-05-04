@@ -1,0 +1,42 @@
+<app-dashboard></app-dashboard>
+<div class="wrapper">
+    <div class="images">
+        <img class="jugador" src="../../../assets/img/jugador.png" alt="jugador" (click)="dropImgJugador()">
+        <img class="balon" src="../../../assets/img/balon.png" alt="balon" (click)="dropImgBalon()"> 
+        <img class="conoAzul" src="../../../assets/img/cono-azul.png" alt="cono-azul" (click)="dropImgConoAzul()"> 
+        <img class="conoRojo" src="../../../assets/img/cono-rojo.png" alt="cono-rojo" (click)="dropImgConoRojo()"> 
+        <img class="escalera" src="../../../assets/img/escaleras.png" alt="escalera" (click)="dropImgEscalera()"> 
+    </div>
+
+    <div class="pizarra" id="pizarra">
+        
+    </div>
+    <div class="formulario">
+        <form (ngSubmit)="guardarTarea()" [formGroup]="formTarea">
+            <div class="mb-3">
+                <label for="nameInput" class="form-label"><strong>Nombre</strong></label>
+                <input type="text" formControlName="nombre" class="form-control" id="nombreTarea" required>
+            </div>
+            <div class="mb-3">
+                <label for="nameInput" class="form-label"><strong>Categoría</strong></label>
+                <input type="text" formControlName="categoria" class="form-control" id="categoriaTarea" required>
+            </div>
+            <div class="mb-3">
+                <label for="nameInput" class="form-label"><strong>Duración(min)</strong></label>
+                <input type="number" formControlName="duracion" class="form-control" id="tiempoTarea" required>
+            </div>
+            <div class="mb-3">
+                <label for="validationTextarea" class="form-label"><strong>Descripción</strong></label>
+                <textarea class="form-control" formControlName="descripcion" id="validationTextarea" required></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary" id="guardar" [disabled]="formTarea.invalid" type="submit">Guardar</button>
+            </div>
+        </form>
+    </div>
+    <div class="borrador">
+        <button class="btn btn-primary" id="borrar" type="submit" (click)="eliminarElementos()">
+            <img class="papelera" src="../../../assets/img/papelera-de-reciclaje.png" alt="papelera">
+        </button>
+    </div>
+</div>
